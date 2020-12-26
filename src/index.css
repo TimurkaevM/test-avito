@@ -1,13 +1,217 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: -apple-system, 'Roboto', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+.app {
+  width: 728px;
+  margin: 0 auto;
+  max-width: 100%;
+  height: 100vh;
+  position: relative;
+}
+.header {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 36px;
+  line-height: 42px;
+  text-align: center;
+  text-transform: uppercase;
+  color: #000000;
+  padding: 15px 0 30px;
+}
+.images {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.images__item {
+  display: block;
+  width: 31%;
+  margin-bottom: 30px;
+  text-decoration: none;
+}
+.images__item img {
+  display: block;
+  width: 100%;
+}
+.comments {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10000;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  visibility: hidden;
+}
+.footer {
+  width: 100%;
+  border-top: 1px solid #CCCCCC;;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 16px;
+  text-align: center;
+  text-transform: uppercase;
+  color: #CCCCCC;
+  padding: 15px 0;
+  box-sizing: border-box;
+}
+.modal {
+  width: 620px;
+  max-width: 100%;
+  position: fixed;
+  background-color: #ffffff;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 30px;
+  z-index: 20000;
+  visibility: hidden;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.modal__item {
+  display: flex;
+  position: relative;
+  flex-wrap: wrap;
+  justify-content: space-between;
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+}
+.modal__comments {
+  position: relative;
+  width: 44%;
+}
+.modal__image {
+  width: 54%;
+  margin-bottom: 30px;
+}
+.modal__image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.modal__inputs {
+  width: 54%;
+}
+.modal__input {
+  width: 100%;
+  height: 30px;
+  background: #FFFFFF;
+  border: 1px solid #CCCCCC;
+  box-sizing: border-box;
+  border-radius: 3px;
+  outline: none;
+  margin-bottom: 20px;
+}
+.modal__btn {
+  width: 100%;
+  height: 30px;
+  color: white;
+  background-color: #4997D0;
+  border-radius: 3px;
+  font-family: 'Roboto', sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 13px;
+  line-height: 15px;
+  text-align: center;
+  border: none;
+  cursor: alias;
+}
+.modal__btn:hover {
+  background-color: #5f9bc7;
+}
+.modal__btn:focus {
+  outline: none;
+}
+.modal__comment {
+  margin-bottom: 20px;
+}
+.modal__data {
+  font-family: 'Roboto', sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 13px;
+  line-height: 13px;
+  color: #999999;
+  padding-bottom: 5px;
+}
+.modal__text {
+  font-family: 'Roboto', sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 15px;
+  line-height: 15px;
+  color: #000000;
+}
+.modal__link {
+  text-decoration: none;
+  color: black;
+  font-size: 25px;
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  z-index: 2;
+  transition: .2s;
+}
+.modal__link:hover {
+  color: orangered;
+}
+/*.hidden {*/
+/*  visibility: hidden;*/
+/*}*/
+.active {
+  visibility: visible;
+}
+
+@media only screen and (max-width: 680px) {
+  .app {
+    height: 100%;
+  }
+  .images__item {
+    width: 80%;
+    margin: 0 auto 30px;
+  }
+  .footer {
+    position: static;
+    width: 80%;
+    margin: 80px auto 0;
+  }
+  .modal {
+    position: fixed;
+    background-color: #ffffff;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform: translate(0, 0);
+    padding: 0;
+  }
+  .modal__item {
+    display: block;
+    margin: 0 auto;
+  }
+  .modal__image {
+    width: 100%;
+  }
+  .modal__comments {
+    width: 90%;
+    margin: 0 auto 40px;
+  }
+  .modal__inputs {
+    width: 90%;
+    margin: 0 auto;
+  }
+  .modal__link {
+    top: 20px;
+    right: 20px;
+  }
 }
